@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vote
+    tier: front
+  name: vote
+spec:
+  replicas: 1 # Assuming the yellow cursor indicates an input field for the replica count,
+            # and '1' is a common default or initial value for a single instance.
+  template:
+    spec:
+      containers:
+      - image: schoolofdevops/vote:v4
+        name: vote
